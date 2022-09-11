@@ -52,9 +52,9 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     let movies: [movie] = [
-        movie(name: "movie", rating: "movie", duration: "movie", category: "movie"),
-        movie(name: "movie", rating: "movie", duration: "movie", category: "movie"),
-        movie(name: "movie", rating: "movie", duration: "movie", category: "movie")
+        movie(name: "movie", rating: "movie", duration: "2:30:00", category: "Drama"),
+        movie(name: "movie", rating: "movie", duration: "2:40:00", category: "Action"),
+        movie(name: "movie", rating: "movie", duration: "2:50:00", category: "Science Fiction")
     ]
 
 }
