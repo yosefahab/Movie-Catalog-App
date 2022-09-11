@@ -19,6 +19,8 @@
 		EB8C188528CDE33000FFF315 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8C188428CDE33000FFF315 /* MainViewController.swift */; };
 		EB8C188728CDEC5A00FFF315 /* customTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8C188628CDEC5A00FFF315 /* customTableCell.swift */; };
 		EB8C188928CDF11A00FFF315 /* customTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8C188828CDF11A00FFF315 /* customTableCellView.swift */; };
+		EB8C188B28CDFE1400FFF315 /* Actor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB8C188A28CDFE1400FFF315 /* Actor.storyboard */; };
+		EB8C188D28CE016A00FFF315 /* ActorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8C188C28CE016A00FFF315 /* ActorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		EB8C188428CDE33000FFF315 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		EB8C188628CDEC5A00FFF315 /* customTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customTableCell.swift; sourceTree = "<group>"; };
 		EB8C188828CDF11A00FFF315 /* customTableCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customTableCellView.swift; sourceTree = "<group>"; };
+		EB8C188A28CDFE1400FFF315 /* Actor.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Actor.storyboard; sourceTree = "<group>"; };
+		EB8C188C28CE016A00FFF315 /* ActorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,7 @@
 				EB3B869328CCAB8B0093EB6F /* LoginViewController.swift */,
 				EB8C188428CDE33000FFF315 /* MainViewController.swift */,
 				C8F4DCC228CD4A8D00F62EE2 /* RegisterScreenViewController.swift */,
+				EB8C188C28CE016A00FFF315 /* ActorViewController.swift */,
 			);
 			path = Control;
 			sourceTree = "<group>";
@@ -103,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				EB3B869A28CCAB8C0093EB6F /* LaunchScreen.storyboard */,
+				EB8C188A28CDFE1400FFF315 /* Actor.storyboard */,
 				EB3B869528CCAB8B0093EB6F /* Login.storyboard */,
 				C8F4DCC028CD442700F62EE2 /* Register.storyboard */,
 				EB8C188228CDE23D00FFF315 /* Main.storyboard */,
@@ -179,6 +185,7 @@
 				EB8C188328CDE23D00FFF315 /* Main.storyboard in Resources */,
 				EB3B869928CCAB8C0093EB6F /* Assets.xcassets in Resources */,
 				EB3B869728CCAB8B0093EB6F /* Login.storyboard in Resources */,
+				EB8C188B28CDFE1400FFF315 /* Actor.storyboard in Resources */,
 				C8F4DCC128CD442700F62EE2 /* Register.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -194,6 +201,7 @@
 				EB3B869428CCAB8B0093EB6F /* LoginViewController.swift in Sources */,
 				C8F4DCC328CD4A8D00F62EE2 /* RegisterScreenViewController.swift in Sources */,
 				EB3B869028CCAB8B0093EB6F /* AppDelegate.swift in Sources */,
+				EB8C188D28CE016A00FFF315 /* ActorViewController.swift in Sources */,
 				EB8C188728CDEC5A00FFF315 /* customTableCell.swift in Sources */,
 				EB3B869228CCAB8B0093EB6F /* SceneDelegate.swift in Sources */,
 				EB8C188528CDE33000FFF315 /* MainViewController.swift in Sources */,

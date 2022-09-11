@@ -22,17 +22,20 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.duration.text = mov.duration
         cell.category.text = mov.category
         cell.img.image = UIImage(systemName: "person")
-        cell.layer.cornerRadius = 12
         return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        var cell = moviesTable.cellForRow(at: indexPath) as! customTableCell
+        cell.favourite.imageView?.image = UIImage(systemName: "heart.fill")
     }
     
     @IBOutlet weak var moviesTable: UITableView!
  
     override func viewDidLoad() {
-        let check: Bool = false
+        let check: Bool = true
         //            self.navigationController?.pushViewController(targetViewController, animated: true)
         super.viewDidLoad()
-        if check == false {
+        if check == true {
             DispatchQueue.main.asyncAfter(deadline: .now()) {
                 let targetStoryboardName = "Login"
                 let targetStoryboard = UIStoryboard(name: targetStoryboardName, bundle: nil)
@@ -45,7 +48,9 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     struct movie{
         let name, rating, duration, category: String
+        var isFavourite: Bool = false
     }
+    
     let movies: [movie] = [
         movie(name: "movie", rating: "movie", duration: "movie", category: "movie"),
         movie(name: "movie", rating: "movie", duration: "movie", category: "movie"),

@@ -13,4 +13,6 @@ class customTableCell: UITableViewCell {
     @IBOutlet weak var category: UILabel!
     @IBOutlet weak var duration: UILabel!
     @IBOutlet weak var img: UIImageView!
+    @IBOutlet weak var favourite: UIButton!
+    @IBOutlet weak var cellView: customTableCellView!
 }
