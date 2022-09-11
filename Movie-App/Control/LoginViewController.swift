@@ -16,7 +16,7 @@ class LoginViewController: UIViewController {
     @IBAction func signUpClicked(_ sender: Any) {
         let targetStoryboardName = "Register"
         let targetStoryboard = UIStoryboard(name: targetStoryboardName, bundle: nil)
-        if let targetViewController = targetStoryboard.instantiateViewController(withIdentifier: "Register") as? RegisterScreenViewController  {
+        if let targetViewController = targetStoryboard.instantiateViewController(withIdentifier: "Register") as? RegisterViewController  {
             present(targetViewController, animated: true, completion: nil)
         }
     }

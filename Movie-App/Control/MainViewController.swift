@@ -25,15 +25,21 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        var cell = moviesTable.cellForRow(at: indexPath) as! customTableCell
-        cell.favourite.imageView?.image = UIImage(systemName: "heart.fill")
+//        var cell = moviesTable.cellForRow(at: indexPath) as! customTableCell
+//        cell.favourite.imageView?.image = UIImage(systemName: "heart.fill")
+        let targetStoryboardName = "MovieDetails"
+        let targetStoryboard = UIStoryboard(name: targetStoryboardName, bundle: nil)
+
+        if let targetViewController = targetStoryboard.instantiateViewController(withIdentifier: "movieDetails") as? MovieDetailsViewController {
+            self.navigationController?.pushViewController(targetViewController, animated: true)
+        }
     }
     
     @IBOutlet weak var moviesTable: UITableView!
  
     override func viewDidLoad() {
         let check: Bool = true
-        //            self.navigationController?.pushViewController(targetViewController, animated: true)
+        
         super.viewDidLoad()
         if check == true {
             DispatchQueue.main.asyncAfter(deadline: .now()) {
