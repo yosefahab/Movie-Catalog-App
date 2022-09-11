@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,9 +18,6 @@ class ViewController: UIViewController {
         let targetStoryboard = UIStoryboard(name: targetStoryboardName, bundle: nil)
         if let targetViewController = targetStoryboard.instantiateViewController(withIdentifier: "Register") as? RegisterScreenViewController  {
             present(targetViewController, animated: true, completion: nil)
-            self.navigationController?.pushViewController(targetViewController, animated: true)
-            
-
         }
     }
     
