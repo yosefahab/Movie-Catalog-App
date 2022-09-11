@@ -104,6 +104,9 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Register">
                                     <color key="baseBackgroundColor" systemColor="systemRedColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="registerBtnPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="TMs-09-hQq"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Register" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qVG-VC-3Un">
                                 <rect key="frame" x="136.66666666666666" y="94" width="101.66666666666666" height="31.333333333333329"/>

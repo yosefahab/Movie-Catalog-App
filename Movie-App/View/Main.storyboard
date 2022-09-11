@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="deB-aa-cdi">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,22 +13,22 @@
             <objects>
                 <viewController id="Y6W-OH-hqX" customClass="MainViewController" customModule="Movie_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="200" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="eVd-VG-1Th">
-                                <rect key="frame" x="0.0" y="118" width="414" height="695"/>
+                                <rect key="frame" x="0.0" y="118" width="428" height="725"/>
                                 <color key="backgroundColor" red="0.1137254902" green="0.12941176469999999" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="customTableCell" id="PSv-4x-xg0" customClass="customTableCell" customModule="Movie_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="200"/>
+                                        <rect key="frame" x="0.0" y="44.666666030883789" width="428" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PSv-4x-xg0" id="CGm-Ih-Ngp">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="428" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Au-bW-LqJ" customClass="customTableCellView" customModule="Movie_App" customModuleProvider="target">
-                                                    <rect key="frame" x="15" y="10" width="384" height="180"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Au-bW-LqJ">
+                                                    <rect key="frame" x="15" y="10" width="398" height="180"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="E8V-d8-06u">
                                                             <rect key="frame" x="20" y="10" width="157" height="160"/>
@@ -38,40 +38,43 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bA2-Sp-g7P">
-                                                            <rect key="frame" x="197" y="107" width="70.5" height="20.5"/>
+                                                            <rect key="frame" x="197" y="106.66666666666667" width="70.333333333333314" height="20.333333333333329"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="69Q-Pn-dsg">
-                                                            <rect key="frame" x="197" y="137.5" width="65.5" height="20.5"/>
+                                                            <rect key="frame" x="197" y="137" width="65.333333333333314" height="20.333333333333343"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2M7-LJ-2Hk">
-                                                            <rect key="frame" x="328.5" y="139" width="45.5" height="31"/>
+                                                            <rect key="frame" x="342.66666666666669" y="139.33333333333334" width="45.333333333333314" height="30.666666666666657"/>
                                                             <color key="tintColor" systemColor="systemRedColor"/>
                                                             <state key="normal" title="Button"/>
                                                             <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system"/>
+                                                            <connections>
+                                                                <action selector="saveActionButton:" destination="PSv-4x-xg0" eventType="touchUpInside" id="6GG-xf-IGN"/>
+                                                            </connections>
                                                         </button>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="i0P-A8-Odn">
-                                                            <rect key="frame" x="197" y="76.5" width="80" height="20.5"/>
+                                                            <rect key="frame" x="197" y="76.333333333333329" width="79.666666666666686" height="20.333333333333329"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qaf-fm-BeR">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="49" height="20.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="48.666666666666664" height="20.333333333333332"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="1LT-nM-5Pj">
-                                                                    <rect key="frame" x="58" y="-0.5" width="22" height="20.5"/>
+                                                                    <rect key="frame" x="57.666666666666686" y="-0.33333333333333215" width="22" height="19.999999999999996"/>
                                                                     <color key="tintColor" systemColor="systemOrangeColor"/>
                                                                 </imageView>
                                                             </subviews>
                                                         </stackView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Fg-94-zHV">
-                                                            <rect key="frame" x="197" y="10" width="140.5" height="31.5"/>
+                                                            <rect key="frame" x="197" y="9.9999999999999982" width="140.33333333333337" height="31.333333333333329"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -120,11 +123,12 @@
                                 </connections>
                             </tableView>
                             <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="32p-DL-zFy">
-                                <rect key="frame" x="0.0" y="813" width="414" height="83"/>
+                                <rect key="frame" x="0.0" y="843" width="428" height="83"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
-                                    <tabBarItem systemItem="favorites" id="8f8-PD-1xu"/>
-                                    <tabBarItem systemItem="more" id="QFM-R1-v1y"/>
+                                    <tabBarItem title="Movies" image="film" catalog="system" id="8f8-PD-1xu"/>
+                                    <tabBarItem title="Actors" image="person.fill" catalog="system" id="JZW-ao-cJW"/>
+                                    <tabBarItem title="Favourites" image="heart.fill" catalog="system" selectedImage="heart.fill" id="QFM-R1-v1y"/>
                                 </items>
                                 <color key="barTintColor" red="0.11372549830000001" green="0.1294117719" blue="0.18039217590000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </tabBar>
@@ -155,7 +159,7 @@
             <objects>
                 <navigationController id="deB-aa-cdi" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Axn-r4-7UG">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="428" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -168,7 +172,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="film" catalog="system" width="128" height="93"/>
         <image name="heart" catalog="system" width="128" height="109"/>
+        <image name="heart.fill" catalog="system" width="128" height="109"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

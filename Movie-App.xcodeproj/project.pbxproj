@@ -19,7 +19,6 @@
 		EB8C188328CDE23D00FFF315 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB8C188228CDE23D00FFF315 /* Main.storyboard */; };
 		EB8C188528CDE33000FFF315 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8C188428CDE33000FFF315 /* MainViewController.swift */; };
 		EB8C188728CDEC5A00FFF315 /* customTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8C188628CDEC5A00FFF315 /* customTableCell.swift */; };
-		EB8C188928CDF11A00FFF315 /* customTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8C188828CDF11A00FFF315 /* customTableCellView.swift */; };
 		EB8C188B28CDFE1400FFF315 /* Actor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB8C188A28CDFE1400FFF315 /* Actor.storyboard */; };
 		EB8C188D28CE016A00FFF315 /* ActorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8C188C28CE016A00FFF315 /* ActorViewController.swift */; };
 		EB8C188F28CE0DFF00FFF315 /* MovieDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8C188E28CE0DFF00FFF315 /* MovieDetailsViewController.swift */; };
@@ -40,7 +39,6 @@
 		EB8C188228CDE23D00FFF315 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		EB8C188428CDE33000FFF315 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		EB8C188628CDEC5A00FFF315 /* customTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customTableCell.swift; sourceTree = "<group>"; };
-		EB8C188828CDF11A00FFF315 /* customTableCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customTableCellView.swift; sourceTree = "<group>"; };
 		EB8C188A28CDFE1400FFF315 /* Actor.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Actor.storyboard; sourceTree = "<group>"; };
 		EB8C188C28CE016A00FFF315 /* ActorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActorViewController.swift; sourceTree = "<group>"; };
 		EB8C188E28CE0DFF00FFF315 /* MovieDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewController.swift; sourceTree = "<group>"; };
@@ -104,7 +102,6 @@
 			isa = PBXGroup;
 			children = (
 				EB8C188628CDEC5A00FFF315 /* customTableCell.swift */,
-				EB8C188828CDF11A00FFF315 /* customTableCellView.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -204,7 +201,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB8C188928CDF11A00FFF315 /* customTableCellView.swift in Sources */,
 				EB3B869428CCAB8B0093EB6F /* LoginViewController.swift in Sources */,
 				EB8C188F28CE0DFF00FFF315 /* MovieDetailsViewController.swift in Sources */,
 				C8F4DCC328CD4A8D00F62EE2 /* RegisterScreenViewController.swift in Sources */,

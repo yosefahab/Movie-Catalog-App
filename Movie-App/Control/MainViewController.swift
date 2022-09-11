@@ -15,33 +15,37 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let mov: movie = movies[indexPath.row]
+        let movie: Movie = movies[indexPath.row]
         let cell = moviesTable.dequeueReusableCell(withIdentifier: "customTableCell", for: indexPath) as! customTableCell
-        cell.name.text = mov.name
-        cell.rating.text = mov.rating
-        cell.duration.text = mov.duration
-        cell.category.text = mov.category
-        cell.img.image = UIImage(systemName: "person")
+        
+        cell.configureCell(info: movie)
+
+        // TODO: figure out code flow
+//        cell.saveToFav = {
+//            cell.favourite.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+//        }
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        var cell = moviesTable.cellForRow(at: indexPath) as! customTableCell
-//        cell.favourite.imageView?.image = UIImage(systemName: "heart.fill")
+        let cell = moviesTable.cellForRow(at: indexPath) as! customTableCell
+
         let targetStoryboardName = "MovieDetails"
         let targetStoryboard = UIStoryboard(name: targetStoryboardName, bundle: nil)
 
         if let targetViewController = targetStoryboard.instantiateViewController(withIdentifier: "movieDetails") as? MovieDetailsViewController {
             self.navigationController?.pushViewController(targetViewController, animated: true)
+            targetViewController.movie = cell.movie
         }
     }
     
     @IBOutlet weak var moviesTable: UITableView!
- 
+
     override func viewDidLoad() {
-        let check: Bool = true
+        let checked: Bool = false
         
         super.viewDidLoad()
-        if check == true {
+        
+        if checked == false {
             DispatchQueue.main.asyncAfter(deadline: .now()) {
                 let targetStoryboardName = "Login"
                 let targetStoryboard = UIStoryboard(name: targetStoryboardName, bundle: nil)
@@ -52,15 +56,17 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
-    struct movie{
-        let name, rating, duration, category: String
-        var isFavourite: Bool = false
-    }
     
-    let movies: [movie] = [
-        movie(name: "movie", rating: "movie", duration: "2:30:00", category: "Drama"),
-        movie(name: "movie", rating: "movie", duration: "2:40:00", category: "Action"),
-        movie(name: "movie", rating: "movie", duration: "2:50:00", category: "Science Fiction")
+    let movies: [Movie] = [
+        Movie(name: "movie1", rating: "5.0", duration: "2:30:00", category: "Action", year: "2020", director: "me", isFavourite: true),
+        Movie(name: "movie2", rating: "4.0", duration: "2:30:00", category: "Drama", year: "2020", director: "me", isFavourite: true),
+        Movie(name: "movie3", rating: "3.0", duration: "2:30:00", category: "Drama", year: "2020", director: "me", isFavourite: true),
+        Movie(name: "movie4", rating: "2.0", duration: "2:30:00", category: "Drama", year: "2020", director: "me", isFavourite: true),
+        Movie(name: "movie5", rating: "1.0", duration: "2:30:00", category: "Drama", year: "2020", director: "me", isFavourite: true)
     ]
-
+}
+struct Movie{
+    let  name, rating, duration, category, year, director: String
+    var isFavourite: Bool = false
+    
 }
