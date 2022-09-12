@@ -16,6 +16,7 @@ class customTableCell: UITableViewCell {
     @IBOutlet weak var rating: UILabel!
     @IBOutlet weak var category: UILabel!
     @IBOutlet weak var duration: UILabel!
+    @IBOutlet weak var year: UILabel!
     @IBOutlet weak var img: UIImageView!
     @IBOutlet weak var favourite: UIButton!
     @IBOutlet weak var cellView: UIView!
@@ -41,6 +42,7 @@ class customTableCell: UITableViewCell {
         self.rating.text = info.rating
         self.category.text = info.category
         self.duration.text = info.duration
+        self.year.text = info.year
         
         // cell view properties
         self.cellView.layer.cornerRadius = 12
