@@ -9,7 +9,7 @@ import UIKit
 
 class customTableCell: UITableViewCell {
     
-    var saveToFav: (()->Void)?
+//    var saveToFav: (()->Void)?
     var movie: Movie?
 
     @IBOutlet weak var name: UILabel!
@@ -45,9 +45,16 @@ class customTableCell: UITableViewCell {
         self.year.text = info.year
         
         // cell view properties
+        if info.isFavourite == true {
+            self.favourite.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+        }
+        else {
+            self.favourite.setImage(UIImage(systemName: "heart"), for: .normal)
+        }
         self.cellView.layer.cornerRadius = 12
         // TODO: Change movie model in accordance to backend
-        self.img.image = UIImage(systemName: "person")
+        self.img.image = UIImage(named: "pic")
+        self.img.layer.cornerRadius = 12
     }
     
 }
