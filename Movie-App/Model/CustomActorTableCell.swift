@@ -8,7 +8,15 @@
 import Foundation
 import UIKit
 class CustomActorTableCell : UITableViewCell{
-    @IBOutlet weak var ActorName: UILabel!
-    @IBOutlet weak var ActorImage: UIImageView!
+    @IBOutlet weak var actorName: UILabel!
+    @IBOutlet weak var actorImage: UIImageView!
+    @IBOutlet weak var cellView: UIView!
     
+    func configureCell(info: Actor) {
+        self.actorName.text = info.name
+        self.actorImage.image = UIImage(named: info.image)
+        self.cellView.layer.cornerRadius = 12
+        self.layer.cornerRadius = 12
+        self.actorImage.layer.cornerRadius = 12
+    }
 }

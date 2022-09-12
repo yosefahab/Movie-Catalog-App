@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,7 +17,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="nc9-as-nn1">
                                 <rect key="frame" x="0.0" y="140" width="414" height="756"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" red="0.11372549830000001" green="0.1294117719" blue="0.18039217590000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="actorTableCell" rowHeight="150" id="GBD-ry-G8m" customClass="CustomActorTableCell" customModule="Movie_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="150"/>
@@ -43,7 +42,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                                    <color key="backgroundColor" red="0.05882352591" green="0.1019607931" blue="0.19215688110000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <constraints>
                                                         <constraint firstItem="kiY-Kr-Ngt" firstAttribute="top" secondItem="xqy-g9-cNa" secondAttribute="top" id="2jl-gq-CMd"/>
                                                         <constraint firstItem="3yz-7p-yUY" firstAttribute="top" secondItem="xqy-g9-cNa" secondAttribute="top" constant="20" id="8vC-BW-2db"/>
@@ -63,8 +62,9 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.1097970977" green="0.1294135451" blue="0.1843107641" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <outlet property="ActorImage" destination="kiY-Kr-Ngt" id="TVG-iU-yeG"/>
-                                            <outlet property="ActorName" destination="3yz-7p-yUY" id="hna-LP-yI4"/>
+                                            <outlet property="actorImage" destination="kiY-Kr-Ngt" id="TVG-iU-yeG"/>
+                                            <outlet property="actorName" destination="3yz-7p-yUY" id="hna-LP-yI4"/>
+                                            <outlet property="cellView" destination="xqy-g9-cNa" id="S4p-TR-XSv"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -92,7 +92,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="actorTable" destination="nc9-as-nn1" id="Qry-Xb-6Je"/>
+                        <outlet property="actorsTable" destination="nc9-as-nn1" id="Qry-Xb-6Je"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -102,11 +102,5 @@
     </scenes>
     <resources>
         <image name="pic" width="1080" height="1440"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
     </resources>
 </document>

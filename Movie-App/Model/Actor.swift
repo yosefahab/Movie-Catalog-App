@@ -12,4 +12,10 @@ struct Actor{
 }
 
 
-let actors : [Actor] = [Actor(id: "125", name: "will smith", image: "pic", moviesList: []),Actor(id: "125", name: "will smith", image: "pic", moviesList: []),Actor(id: "125", name: "will smith", image: "pic", moviesList: []),Actor(id: "125", name: "will smith", image: "pic", moviesList: []),Actor(id: "125", name: "will smith", image: "pic", moviesList: []),Actor(id: "125", name: "will smith", image: "pic", moviesList: []),Actor(id: "125", name: "will smith", image: "pic", moviesList: []),Actor(id: "125", name: "will smith", image: "pic", moviesList: []),Actor(id: "125", name: "will smith", image: "pic", moviesList: [])]
+let actors : [Actor] = [
+    Actor(id: "125", name: "will smith", image: "pic", moviesList: []),
+    Actor(id: "125", name: "will smith", image: "pic", moviesList: []),
+    Actor(id: "125", name: "will smith", image: "pic", moviesList: []),
+    Actor(id: "125", name: "will smith", image: "pic", moviesList: []),
+    Actor(id: "125", name: "will smith", image: "pic", moviesList: []),
+]

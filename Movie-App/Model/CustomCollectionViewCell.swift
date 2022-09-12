@@ -7,7 +7,7 @@
 
 import UIKit
 
-class customCollectionViewCell: UICollectionViewCell {
+class CustomCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var img: UIImageView!
     var id: Int?
     

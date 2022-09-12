@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class MoviesListController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class FavouriteMoviesListController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movies.count
@@ -16,7 +16,7 @@ class MoviesListController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let movie: Movie = movies[indexPath.row]
-        let cell = moviesTable.dequeueReusableCell(withIdentifier: "customTableCell", for: indexPath) as! customTableCell
+        let cell = moviesTable.dequeueReusableCell(withIdentifier: "CustomTableCell", for: indexPath) as! CustomTableCell
         cell.configureCell(info: movie)
         // TODO: figure out code flow
 //        cell.saveToFav = {
@@ -24,8 +24,9 @@ class MoviesListController: UIViewController, UITableViewDelegate, UITableViewDa
 //        }
         return cell
     }
+    // navigate to detail view of this movie
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = moviesTable.cellForRow(at: indexPath) as! customTableCell
+        let cell = moviesTable.cellForRow(at: indexPath) as! CustomTableCell
 
         let targetStoryboardName = "MovieDetails"
         let targetStoryboard = UIStoryboard(name: targetStoryboardName, bundle: nil)

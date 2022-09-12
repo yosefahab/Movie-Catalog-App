@@ -7,9 +7,8 @@
 
 import UIKit
 
-class customTableCell: UITableViewCell {
+class CustomTableCell: UITableViewCell {
     
-//    var saveToFav: (()->Void)?
     var movie: Movie?
 
     @IBOutlet weak var name: UILabel!
@@ -22,7 +21,6 @@ class customTableCell: UITableViewCell {
     @IBOutlet weak var cellView: UIView!
     
     @IBAction func saveActionButton(_ sender: Any) {
-//        saveToFav!()
         if let movie = self.movie {
             if movie.isFavourite == true {
                 self.favourite.setImage(UIImage(systemName: "heart"), for: .normal)
