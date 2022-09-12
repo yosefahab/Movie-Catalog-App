@@ -74,10 +74,10 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
     }
     @IBAction func actorsBtnPressed(_ sender: Any) {
-//        let targetStoryboard = UIStoryboard(name: "ActorsList", bundle: nil)
-//        if let targetViewController = targetStoryboard.instantiateViewController(withIdentifier: "ActorsList") as? ActorListController {
-//            self.navigationController?.pushViewController(targetViewController, animated: true)
-//        }
+        let targetStoryboard = UIStoryboard(name: "ActorsList", bundle: nil)
+        if let targetViewController = targetStoryboard.instantiateViewController(withIdentifier: "ActorsList") as? ActorsListViewController {
+            self.navigationController?.pushViewController(targetViewController, animated: true)
+        }
     }
     
 }

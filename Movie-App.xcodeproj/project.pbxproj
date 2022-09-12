@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C861330028CFB271007C170C /* ActorsList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C86132FF28CFB271007C170C /* ActorsList.storyboard */; };
+		C861330228CFB7BA007C170C /* Actor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C861330128CFB7BA007C170C /* Actor.swift */; };
+		C861330428CFBD3A007C170C /* CustomActorTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C861330328CFBD3A007C170C /* CustomActorTableCell.swift */; };
+		C861330628CFBDF7007C170C /* ActorsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C861330528CFBDF7007C170C /* ActorsListViewController.swift */; };
 		C8662AB228CDFC8A00A73937 /* MovieDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8662AB128CDFC8A00A73937 /* MovieDetails.storyboard */; };
 		C8F4DCC128CD442700F62EE2 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8F4DCC028CD442700F62EE2 /* Register.storyboard */; };
 		C8F4DCC328CD4A8D00F62EE2 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F4DCC228CD4A8D00F62EE2 /* RegisterViewController.swift */; };
@@ -29,6 +33,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C86132FF28CFB271007C170C /* ActorsList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ActorsList.storyboard; sourceTree = "<group>"; };
+		C861330128CFB7BA007C170C /* Actor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actor.swift; sourceTree = "<group>"; };
+		C861330328CFBD3A007C170C /* CustomActorTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomActorTableCell.swift; sourceTree = "<group>"; };
+		C861330528CFBDF7007C170C /* ActorsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActorsListViewController.swift; sourceTree = "<group>"; };
 		C8662AB128CDFC8A00A73937 /* MovieDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MovieDetails.storyboard; sourceTree = "<group>"; };
 		C8F4DCC028CD442700F62EE2 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
 		C8F4DCC228CD4A8D00F62EE2 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +111,7 @@
 				C8F4DCC228CD4A8D00F62EE2 /* RegisterViewController.swift */,
 				EB8C188C28CE016A00FFF315 /* ActorViewController.swift */,
 				EB0806C628CF8F2100159B68 /* MainViewController.swift */,
+				C861330528CFBDF7007C170C /* ActorsListViewController.swift */,
 			);
 			path = Control;
 			sourceTree = "<group>";
@@ -113,6 +122,8 @@
 				EB8C188628CDEC5A00FFF315 /* customTableCell.swift */,
 				EBCCDD4828CF9CFF008BD97D /* customCollectionViewCell.swift */,
 				EBCCDD4A28CFA377008BD97D /* Movie.swift */,
+				C861330128CFB7BA007C170C /* Actor.swift */,
+				C861330328CFBD3A007C170C /* CustomActorTableCell.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -127,6 +138,7 @@
 				EB8C188228CDE23D00FFF315 /* MoviesList.storyboard */,
 				EB0806C428CF8E2C00159B68 /* Main.storyboard */,
 				C8662AB128CDFC8A00A73937 /* MovieDetails.storyboard */,
+				C86132FF28CFB271007C170C /* ActorsList.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -204,6 +216,7 @@
 				EB3B869728CCAB8B0093EB6F /* Login.storyboard in Resources */,
 				EB8C188B28CDFE1400FFF315 /* Actor.storyboard in Resources */,
 				C8F4DCC128CD442700F62EE2 /* Register.storyboard in Resources */,
+				C861330028CFB271007C170C /* ActorsList.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,12 +230,15 @@
 				EB3B869428CCAB8B0093EB6F /* LoginViewController.swift in Sources */,
 				EB8C188F28CE0DFF00FFF315 /* MovieDetailsViewController.swift in Sources */,
 				EBCCDD4B28CFA377008BD97D /* Movie.swift in Sources */,
+				C861330228CFB7BA007C170C /* Actor.swift in Sources */,
 				EB0806C728CF8F2100159B68 /* MainViewController.swift in Sources */,
 				C8F4DCC328CD4A8D00F62EE2 /* RegisterViewController.swift in Sources */,
+				C861330628CFBDF7007C170C /* ActorsListViewController.swift in Sources */,
 				EB3B869028CCAB8B0093EB6F /* AppDelegate.swift in Sources */,
 				EB8C188D28CE016A00FFF315 /* ActorViewController.swift in Sources */,
 				EB8C188728CDEC5A00FFF315 /* customTableCell.swift in Sources */,
 				EB3B869228CCAB8B0093EB6F /* SceneDelegate.swift in Sources */,
+				C861330428CFBD3A007C170C /* CustomActorTableCell.swift in Sources */,
 				EB8C188528CDE33000FFF315 /* MoviesListController.swift in Sources */,
 				EBCCDD4928CF9CFF008BD97D /* customCollectionViewCell.swift in Sources */,
 			);

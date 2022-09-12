@@ -41,7 +41,7 @@ class customTableCell: UITableViewCell {
         self.name.text = info.name
         self.rating.text = info.rating
         self.category.text = info.category
-        self.duration.text = info.duration
+        self.duration.text = info.time
         self.year.text = info.year
         
         // cell view properties

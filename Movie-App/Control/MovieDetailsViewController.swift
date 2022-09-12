@@ -27,7 +27,7 @@ class MovieDetailsViewController: UIViewController {
             movieDirector.text = "Director: " + movie.director
             movieCategory.text = "Category: " + movie.category
             movieYear.text = "Year: " + movie.year
-            movieDuration.text = "Duration: " + movie.duration
+            movieDuration.text = "Duration: " + movie.time
             movieRating.text = movie.rating
         }
     }
