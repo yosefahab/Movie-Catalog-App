@@ -13,7 +13,9 @@ enum NetworkError: Error {
 }
 
 class NetworkClient {
-    
+
+    let baseURL: String = "https://our-movie-service.herokuapp.com/"
+
     static func getMovies(url: URL) async throws -> [Movie] {
         let (data, response) = try await URLSession.shared.data(from: url)
         

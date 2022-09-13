@@ -19,6 +19,7 @@ class FavouriteMoviesListController: UIViewController, UITableViewDelegate, UITa
         let cell = moviesTable.dequeueReusableCell(withIdentifier: "CustomTableCell", for: indexPath) as! CustomTableCell
         cell.configureCell(info: movie)
         // TODO: figure out code flow
+        
 //        cell.saveToFav = {
 //            cell.favourite.setImage(UIImage(systemName: "heart.fill"), for: .normal)
 //        }

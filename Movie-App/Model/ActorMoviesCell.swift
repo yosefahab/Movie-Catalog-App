@@ -22,18 +22,7 @@ class ActorMoviesCell: UITableViewCell {
     @IBOutlet weak var favourite: UIButton!
     @IBOutlet weak var cellView: UIView!
     
-    @IBAction func saveActionButton(_ sender: Any) {
-        if let movie = self.movie {
-            if movie.isFavourite == true {
-                self.favourite.setImage(UIImage(systemName: "heart"), for: .normal)
-                self.movie?.isFavourite = false
-            }
-            else{
-                self.favourite.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-                self.movie?.isFavourite = true
-            }
-        }
-    }
+  
     @IBAction func favouriteBtnPressed(_ sender: Any) {
         if let movie = self.movie {
             if movie.isFavourite == true {
@@ -64,6 +53,7 @@ class ActorMoviesCell: UITableViewCell {
         }
         
         self.cellView.layer.cornerRadius = 12
+        // TODO: Change movie model in accordance to backend
         self.img.image = UIImage(named: "pic")
         self.img.layer.cornerRadius = 12
     }
