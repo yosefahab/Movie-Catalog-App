@@ -24,10 +24,10 @@ class MovieDetailsViewController: UIViewController {
         
         if let movie = movie {
             movieName.text = movie.name
-            movieDirector.text = "Director: " + movie.director
-            movieCategory.text = "Category: " + movie.category
-            movieYear.text = "Year: " + movie.year
-            movieDuration.text = "Duration: " + movie.time
+            movieDirector.text = movie.director
+            movieCategory.text = movie.category
+            movieYear.text = "(" + movie.year + ")"
+            movieDuration.text = movie.time
             movieRating.text = movie.rating
         }
     }

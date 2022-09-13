@@ -13,9 +13,8 @@ let movies: [Movie] = [
     Movie(name: "movie3", rating: "3.0", time: "2:30:00", category: "Drama", year: "2020", director: "me", isFavourite: true),
     Movie(name: "movie4", rating: "2.0", time: "2:30:00", category: "Drama", year: "2020", director: "me", isFavourite: true),
     Movie(name: "movie5", rating: "1.0", time: "2:30:00", category: "Drama", year: "2020", director: "me", isFavourite: true)
-    
 ]
-struct Movie{
+struct Movie: Codable {
     let name, rating, time, category, year, director: String
     var isFavourite: Bool = true
 //    let id : String

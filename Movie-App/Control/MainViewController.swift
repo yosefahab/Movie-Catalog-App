@@ -20,26 +20,35 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             // TODO: dynamic images
             // movies[cell.id].img
             cell.img.image = UIImage(named: "pic")
-            cell.img.layer.cornerRadius = 12
             return cell
         }
         // filter by movies with rating < 4.0
         else {
-            let cell = topMoviesCollection.dequeueReusableCell(withReuseIdentifier: "topMoviesCollectionCell", for: indexPath) as! CustomCollectionViewCell
+            let cell = moviesCollection.dequeueReusableCell(withReuseIdentifier: "moviesCollectionCell", for: indexPath) as! CustomMoviesCollectionViewCell
             cell.img.image = UIImage(named: "pic")
-            cell.img.layer.cornerRadius = 12
             return cell
         }
     }
     
     // navigate to detail view of this movie
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = topMoviesCollection.cellForItem(at: indexPath) as! CustomCollectionViewCell
-        cell.configureCell(id: indexPath.row)
-        let targetStoryboard = UIStoryboard(name: "MovieDetails", bundle: nil)
-        if let targetViewController = targetStoryboard.instantiateViewController(withIdentifier: "movieDetails") as? MovieDetailsViewController {
-            targetViewController.movie = movies[cell.id!]
-            self.navigationController?.pushViewController(targetViewController, animated: true)
+        if collectionView === topMoviesCollection {
+            let cell = topMoviesCollection.cellForItem(at: indexPath) as! CustomCollectionViewCell
+            cell.configureCell(id: indexPath.row)
+            let targetStoryboard = UIStoryboard(name: "MovieDetails", bundle: nil)
+            if let targetViewController = targetStoryboard.instantiateViewController(withIdentifier: "movieDetails") as? MovieDetailsViewController {
+                targetViewController.movie = movies[cell.id!]
+                self.navigationController?.pushViewController(targetViewController, animated: true)
+            }
+        }
+        else {
+            let cell = moviesCollection.cellForItem(at: indexPath) as! CustomMoviesCollectionViewCell
+            cell.configureCell(id: indexPath.row)
+            let targetStoryboard = UIStoryboard(name: "MovieDetails", bundle: nil)
+            if let targetViewController = targetStoryboard.instantiateViewController(withIdentifier: "movieDetails") as? MovieDetailsViewController {
+                targetViewController.movie = movies[cell.id!]
+                self.navigationController?.pushViewController(targetViewController, animated: true)
+            }
         }
     }
     
@@ -49,6 +58,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
         let checked: Bool = false
         if checked == false {
             let targetStoryboardName = "Login"
@@ -60,6 +70,17 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         }
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        
+    }
+    
     @IBAction func favouritesBtnPressed(_ sender: Any) {
         let targetStoryboard = UIStoryboard(name: "FavouriteMoviesList", bundle: nil)
         if let targetViewController = targetStoryboard.instantiateViewController(withIdentifier: "FavouriteMoviesList") as? FavouriteMoviesListController {
