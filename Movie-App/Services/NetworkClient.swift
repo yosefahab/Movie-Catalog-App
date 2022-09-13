@@ -13,10 +13,9 @@ enum NetworkError: Error {
 }
 
 class NetworkClient {
-
-    let baseURL: String = "https://our-movie-service.herokuapp.com/"
-
-    static func getMovies(url: URL) async throws -> [Movie] {
+    static let baseURL: String = "https://our-movie-service.herokuapp.com/"
+    
+    static func requestMovies(url: URL) async throws -> [Movie] {
         let (data, response) = try await URLSession.shared.data(from: url)
         
         guard let httpResponse = response as? HTTPURLResponse,
@@ -27,7 +26,7 @@ class NetworkClient {
         return newMovies
     }
 
-    static func getActor(withID: String, from url: URL) async throws -> Actor {
+    static func requestActor(withID: String, from url: URL) async throws -> Actor {
         let (data, response) = try await URLSession.shared.data(from: url)
         
         guard let httpResponse = response as? HTTPURLResponse,
@@ -36,5 +35,26 @@ class NetworkClient {
         }
         let actor: Actor = try JSONDecoder().decode(Actor.self, from: data)
         return actor
+    }
+    
+    static func requestLogin(email: String, password: String) -> User {
+        let loginURL: String = baseURL + "Users/login"
+        let user = User(email: "", username: "", password: "")
+        return user
+        //    {
+        //        "email": "string",
+        //        "password": "string"
+        //    }
+    }
+    
+    static func requestRegister(username: String, email: String, password: String) -> User {
+        let signUpURL: String = baseURL + "Users/register"
+        let user = User(email: "", username: "", password: "")
+        return user
+        //    {
+        //        "username": "string"
+        //        "email": "string"
+        //        "password": "string"
+        //    }
     }
 }
