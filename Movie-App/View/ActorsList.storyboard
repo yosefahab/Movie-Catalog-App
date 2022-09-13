@@ -33,6 +33,8 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="120" height="110"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="120" id="Oy8-x9-2Dy"/>
+                                                                <constraint firstAttribute="height" constant="110" id="Ozu-vG-Krs"/>
+                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="kdv-Eu-cfM"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="will smith" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3yz-7p-yUY">

@@ -54,6 +54,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             let targetStoryboardName = "Login"
             let targetStoryboard = UIStoryboard(name: targetStoryboardName, bundle: nil)
             if let targetViewController = targetStoryboard.instantiateViewController(withIdentifier: "Login") as? LoginViewController {
+                targetViewController.isModalInPresentation = true
                 self.present(targetViewController, animated: true, completion: nil)
             }
         }

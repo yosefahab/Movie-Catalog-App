@@ -27,7 +27,7 @@ class ActorsListViewController:UIViewController,UITableViewDelegate,UITableViewD
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let actor = actors[indexPath.row]
-
+        
         let targetStoryboardName = "ActorDetails"
         let targetStoryboard = UIStoryboard(name: targetStoryboardName, bundle: nil)
 

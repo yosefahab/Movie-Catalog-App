@@ -84,6 +84,9 @@
                                             </attributedString>
                                             <color key="baseForegroundColor" systemColor="labelColor"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="signInBtnPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="UhN-Qc-Okf"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>

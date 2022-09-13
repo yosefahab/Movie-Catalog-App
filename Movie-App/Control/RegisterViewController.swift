@@ -12,6 +12,9 @@ class RegisterViewController : UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    @IBAction func signInBtnPressed(_ sender: Any) {
+        self.dismiss(animated: true)
+    }
     @IBAction func registerBtnPressed(_ sender: Any) {
         self.dismiss(animated: true)
     }
