@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="nc9-as-nn1">
-                                <rect key="frame" x="0.0" y="140" width="414" height="756"/>
+                                <rect key="frame" x="0.0" y="135.5" width="414" height="760.5"/>
                                 <color key="backgroundColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.078431372550000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="actorTableCell" rowHeight="150" id="GBD-ry-G8m" customClass="CustomActorTableCell" customModule="Movie_App" customModuleProvider="target">
@@ -37,9 +37,9 @@
                                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="kdv-Eu-cfM"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="will smith" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3yz-7p-yUY">
-                                                            <rect key="frame" x="140" y="20" width="234" height="32.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="will smith" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="3yz-7p-yUY">
+                                                            <rect key="frame" x="140" y="20" width="234" height="60"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -50,6 +50,7 @@
                                                         <constraint firstItem="3yz-7p-yUY" firstAttribute="top" secondItem="xqy-g9-cNa" secondAttribute="top" constant="20" id="8vC-BW-2db"/>
                                                         <constraint firstItem="3yz-7p-yUY" firstAttribute="leading" secondItem="kiY-Kr-Ngt" secondAttribute="trailing" constant="20" id="bUL-MO-et3"/>
                                                         <constraint firstItem="kiY-Kr-Ngt" firstAttribute="leading" secondItem="xqy-g9-cNa" secondAttribute="leading" id="cJ7-aa-AQz"/>
+                                                        <constraint firstAttribute="bottom" secondItem="3yz-7p-yUY" secondAttribute="bottom" constant="50" id="hCa-LC-LVS"/>
                                                         <constraint firstAttribute="trailing" secondItem="3yz-7p-yUY" secondAttribute="trailing" constant="20" id="uj8-pp-Vzk"/>
                                                         <constraint firstAttribute="bottom" secondItem="kiY-Kr-Ngt" secondAttribute="bottom" id="z5I-ll-gr7"/>
                                                     </constraints>
@@ -77,8 +78,8 @@
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Actors " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrQ-eo-LaG">
-                                <rect key="frame" x="20" y="84" width="91" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <rect key="frame" x="20" y="84" width="78.5" height="31.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
