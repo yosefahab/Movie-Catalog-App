@@ -11,11 +11,11 @@ import UIKit
 class FavouriteMoviesListController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (currentUser?.userFavourite?.count)!
+        return movies.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let movie: Movie = (currentUser?.userFavourite![indexPath.row])!
+        let movie: Movie = movies[indexPath.row]
         let cell = moviesTable.dequeueReusableCell(withIdentifier: "CustomTableCell", for: indexPath) as! CustomTableCell
         cell.configureCell(info: movie)
         return cell

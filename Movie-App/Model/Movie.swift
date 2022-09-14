@@ -18,6 +18,11 @@ var topMovies: [Movie] = [] {
         NotificationCenter.default.post(name: Notification.Name("topMoviesUpdated"), object: nil)
     }
 }
+var otherMovies: [Movie] = [] {
+    didSet {
+        NotificationCenter.default.post(name: Notification.Name("otherMoviesUpdated"), object: nil)
+    }
+}
 
 //var movies: [Movie] = [
 //    Movie(name: "movie1", rating: "5.0", time: "2:30:00", category: "Action", year: "2020", director: "me", isFavourite: true),
