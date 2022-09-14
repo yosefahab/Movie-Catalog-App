@@ -16,6 +16,7 @@ class RegisterViewController : UIViewController{
         self.dismiss(animated: true)
     }
     @IBAction func registerBtnPressed(_ sender: Any) {
+        _ = Task { try await NetworkClient.requestRegister(username:"test", email:"test@yahoo.com", password: "test") }
         self.dismiss(animated: true)
     }
 }

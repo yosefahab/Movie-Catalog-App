@@ -35,6 +35,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         if collectionView === topMoviesCollection {
             let cell = topMoviesCollection.cellForItem(at: indexPath) as! CustomCollectionViewCell
             cell.configureCell(id: indexPath.row)
+            
             let targetStoryboard = UIStoryboard(name: "MovieDetails", bundle: nil)
             if let targetViewController = targetStoryboard.instantiateViewController(withIdentifier: "movieDetails") as? MovieDetailsViewController {
                 targetViewController.movie = movies[cell.id!]
@@ -44,6 +45,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         else {
             let cell = moviesCollection.cellForItem(at: indexPath) as! CustomMoviesCollectionViewCell
             cell.configureCell(id: indexPath.row)
+            
             let targetStoryboard = UIStoryboard(name: "MovieDetails", bundle: nil)
             if let targetViewController = targetStoryboard.instantiateViewController(withIdentifier: "movieDetails") as? MovieDetailsViewController {
                 targetViewController.movie = movies[cell.id!]
@@ -57,7 +59,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        _ = Task { try await NetworkClient.requestMovies() }
         
         let checked: Bool = false
         if checked == false {

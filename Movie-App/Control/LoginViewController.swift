@@ -16,7 +16,7 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func signInPressed(_ sender: Any) {
-        self.dismiss(animated: true)
+        _ = Task { try await NetworkClient.requestLogin(email: "steven123@yahoo.com", password: "steven123") }
     }
     
     @IBAction func signUpPressed(_ sender: Any) {
