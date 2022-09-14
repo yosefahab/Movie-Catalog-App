@@ -54,7 +54,7 @@ class CustomMoviesCollectionViewCell: UICollectionViewCell {
     
     // fill with movies with rate < 4.0
     func configureCell(id: Int) {
-        self.movie = movies[id]
+        self.movie = otherMovies[id]
         loadIm(url: URL(string: (self.movie?.movieImageURL)!)!)
         self.name.text = self.movie?.movieName
         self.duration.text = self.movie?.movieDuration

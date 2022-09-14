@@ -10,7 +10,9 @@ import UIKit
 class MainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return movies.count
+        if collectionView === topMoviesCollection { return topMovies.count }
+        else { return otherMovies.count }
+        
     }
 
     // fill cell
@@ -71,11 +73,24 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         }
         NotificationCenter.default.addObserver(self, selector: #selector(topMoviesUpdated), name: Notification.Name("topMoviesUpdated"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(moviesUpdated), name: Notification.Name("moviesUpdated"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(otherMoviesUpdated), name: Notification.Name("otherMoviesUpdated"), object: nil)
+        
     }
 
     @objc private func moviesUpdated(notification: NSNotification) {
-        self.moviesCollection.reloadData()
         self.welcomeLabel.text = "Welcome home, " + (currentUser?.username ?? "")
+        
+        for movie in movies {
+            if Double(movie.movieRating!)! >= 6.0 {
+                topMovies.append(movie)
+            }
+            else {
+                otherMovies.append(movie)
+            }
+        }
+    }
+    @objc private func otherMoviesUpdated(notification: NSNotification) {
+        self.moviesCollection.reloadData()
     }
     @objc private func topMoviesUpdated(notification: NSNotification) {
         self.topMoviesCollection.reloadData()
@@ -86,16 +101,6 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         
         if (movies.isEmpty) { Task { movies = await NetworkClient.requestMovies() } }
-        else {
-            for movie in movies {
-                if Double(movie.movieRating!)! >= 4.5 {
-                    topMovies.append(movie)
-                }
-                else {
-                    movies.append(movie)
-                }
-            }
-        }
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
