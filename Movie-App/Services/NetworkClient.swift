@@ -7,97 +7,110 @@
 
 import Foundation
 
-enum NetworkError: Error {
-    case invalidResponse
-}
-
 class NetworkClient {
     static let baseURL: String = "https://our-movie-service.herokuapp.com/"
     
-    static func requestMovies() async throws -> [Movie] {
+    static func requestMovies() async -> [Movie] {
         let url: URL = URL(string: baseURL + "Movies/getmovies")!
-        let (data, response) = try await URLSession.shared.data(from: url)
-
-        guard let httpResponse = response as? HTTPURLResponse,
-                httpResponse.statusCode == 200 else {
-            throw NetworkError.invalidResponse
-        }
-        let newMovies: [Movie] = try JSONDecoder().decode([Movie].self, from: data)
-        print("Error: " + String(newMovies.count))
-        return newMovies
-    }
-
-    static func requestActor(withID: String, from url: URL) async throws -> Actor {
-        let (data, response) = try await URLSession.shared.data(from: url)
+        var urlRequest = URLRequest(url: url)
         
-        guard let httpResponse = response as? HTTPURLResponse,
-                httpResponse.statusCode == 200 else {
-            throw NetworkError.invalidResponse
+        urlRequest.httpMethod = "GET"
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        do {
+            let (data, _) = try await URLSession.shared.data(for: urlRequest)
+            let newMovies = try JSONDecoder().decode([Movie].self, from: data)
+            return newMovies
+        } catch {
+            print("error in movies")
         }
-        let actor: Actor = try JSONDecoder().decode(Actor.self, from: data)
-        return actor
+        return []
     }
     
-    static func requestLogin(email: String, password: String) async throws -> Void {
+    static func requestActors() async -> [Actor] {
+        let url: URL = URL(string: baseURL + "Actors/getactors")!
+        var urlRequest = URLRequest(url: url)
+        
+        urlRequest.httpMethod = "GET"
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        do {
+            let (data, _) = try await URLSession.shared.data(for: urlRequest)
+            let newActors = try JSONDecoder().decode([Actor].self, from: data)
+            return newActors
+        } catch {
+            print("error in actors")
+        }
+        return []
+    }
+    
+    static func requestLogin(email: String, password: String) async -> User? {
         let url: URL = URL(string: baseURL + "Users/login")!
-        var user: User?
         let credentials: [String: String] = ["email": email, "password": password]
-        user = await self.postRequest(to: url, withData: credentials)
-    }
-    
-    static func requestRegister(username: String, email: String, password: String) async -> Void {
-        let url: URL = URL(string: baseURL + "Users/register")!
-        var user: User?
-        let credentials: [String: String] = ["username": username, "email": email, "password": password]
-        user = await self.postRequest(to: url, withData: credentials)
-    }
-
-    private static func postRequest(to url: URL, withData credentials: [String : String]) async -> User? {
-        var user: User?
+        
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "POST"
         urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
-
+        
         do {
             let json: Data = try JSONSerialization.data(withJSONObject: credentials, options: [])
             urlRequest.httpBody = json
         } catch {
-            print("Error: cannot create JSON from credentials dictionary")
-            return nil
+            print("Error: cannot create JSON from login credentials dictionary")
         }
         
-        let session = URLSession.shared
-        let task = session.dataTask(with: urlRequest) { (data, response, error) in
-            guard error == nil else {
-                print("Error: couldn't call POST")
-                print(error!)
-                return
+        do {
+            let (data, response) = try await URLSession.shared.data(for: urlRequest)
+            if let httpResponse = response as? HTTPURLResponse {
+                print("login request w/ status code: \(httpResponse.statusCode)")
+                let user = try JSONDecoder().decode(User.self, from: data)
+                return user
             }
-            guard let responseData = data else {
-                print("Error: did not receive data")
-                return
+            else {
+                return nil
             }
-            print("Error: " + String(responseData.count))
-            let decoder = JSONDecoder()
-            
-            do {
-                user = try decoder.decode(User.self, from: responseData)
-                print(user!)
-            } catch {
-                print(error.localizedDescription)
-            }
+        } catch {
+            print("error in login request/deocde user")
         }
-        task.resume()
-        return user
+        return nil
     }
-//        func downloadImage(from url: URL) {
-//            getData(from: url) { data, response, error in
+    
+    
+    static func requestRegister(username: String, email: String, password: String) async -> User? {
+        let url: URL = URL(string: baseURL + "Users/register")!
+        let credentials: [String: String] = ["username": username, "email": email, "password": password]
+        
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "POST"
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        do {
+            let json: Data = try JSONSerialization.data(withJSONObject: credentials, options: [])
+            urlRequest.httpBody = json
+        } catch {
+            print("Error: cannot create JSON from register credentials dictionary")
+        }
+        
+        do {
+            let (_, response) = try await URLSession.shared.data(from: url)
+            if let httpResponse = response as? HTTPURLResponse {
+                print("register request w/ status code: \(httpResponse.statusCode)")
+                return User(id: nil, email: email, username: username, password: password, userFavourite: [])
+            }
+            else {
+                return nil
+            }
+        } catch {
+            print("error in register request/deocde user")
+        }
+        return nil
+    }
+
+    func downloadImage(from url: URL) {
+//        getData(from: url) { data, response, error in
 //            guard let data = data, error == nil else { return }
 //            print(response?.suggestedFilename ?? url.lastPathComponent)
-//            // always update the UI from the main thread
 //            DispatchQueue.main.async() { [weak self] in
-//                self?.imageView.image = UIImage(data: data)
 //            }
 //        }
-//    }
+    }
 }

@@ -24,36 +24,35 @@ class ActorMoviesCell: UITableViewCell {
     
   
     @IBAction func favouriteBtnPressed(_ sender: Any) {
-        if let movie = self.movie {
-            if movie.isFavourite == true {
-                self.favourite.setImage(UIImage(systemName: "heart"), for: .normal)
-                self.movie?.isFavourite = false
-            }
-            else{
-                self.favourite.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-                self.movie?.isFavourite = true
-            }
-        }
+//        if let movie = self.movie {
+//            if movie.isFavourite == true {
+//                self.favourite.setImage(UIImage(systemName: "heart"), for: .normal)
+//                self.movie?.isFavourite = false
+//            }
+//            else{
+//                self.favourite.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+//                self.movie?.isFavourite = true
+//            }
+//        }
     }
     func configureCell(info: Movie){
         // cell data
         self.movie = info
-        self.name.text = info.name
-        self.rating.text = info.rating
-        self.category.text = info.category
-        self.duration.text = info.time
-        self.year.text = info.year
+        self.name.text = info.movieName
+        self.rating.text = info.movieRating
+        self.category.text = info.movieCategory
+        self.duration.text = info.movieDuration
+        self.year.text = info.movieProductionYear
         
         // cell view properties
-        if info.isFavourite == true {
-            self.favourite.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-        }
-        else {
-            self.favourite.setImage(UIImage(systemName: "heart"), for: .normal)
-        }
-        
+//        if info.isFavourite == true {
+//            self.favourite.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+//        }
+//        else {
+//            self.favourite.setImage(UIImage(systemName: "heart"), for: .normal)
+//        }
+//
         self.cellView.layer.cornerRadius = 12
-        // TODO: Change movie model in accordance to backend
         self.img.image = UIImage(named: "pic")
         self.img.layer.cornerRadius = 12
     }

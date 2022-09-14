@@ -14,12 +14,12 @@ class CustomActorTableCell : UITableViewCell {
     @IBOutlet weak var cellView: UIView!
     
     func configureCell(info: Actor) {
-        self.actorName.text = info.name
+        self.actorName.text = info.actorName
 
         self.layer.cornerRadius = 12
         self.cellView.layer.cornerRadius = 12
 
-        self.actorImage.image = UIImage(named: info.image)
+        self.actorImage.image = UIImage(named: info.actorImageURL)
         self.actorImage.layer.cornerRadius = 12
     }
 }

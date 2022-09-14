@@ -27,8 +27,8 @@ class CustomMoviesCollectionViewCell: UICollectionViewCell {
     
     func configureCell(id: Int) {
         self.id = id
-        self.name.text = movies[id].name
-        self.duration.text = movies[id].time
+        self.name.text = movies[id].movieName
+        self.duration.text = movies[id].movieDuration
         self.img.layer.cornerRadius = 12
         self.layer.cornerRadius = 12
         // fill with movies with rate < 4.0

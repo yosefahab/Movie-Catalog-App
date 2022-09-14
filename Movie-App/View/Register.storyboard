@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="VMH-wa-e7t" userLabel="UsernameStack">
-                                <rect key="frame" x="20" y="215.33333333333337" width="350" height="260"/>
+                                <rect key="frame" x="20" y="218.33333333333337" width="350" height="260"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AUt-5R-TSF">
                                         <rect key="frame" x="0.0" y="0.0" width="350" height="50"/>
@@ -62,7 +63,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="pHQ-Vz-ahf" userLabel="AlreadyStack">
-                                <rect key="frame" x="20" y="585.33333333333337" width="274" height="30.333333333333371"/>
+                                <rect key="frame" x="20" y="588.33333333333337" width="274" height="30.333333333333371"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="2" verticalHuggingPriority="251" text="Already have an account? " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iWF-Qk-APX">
                                         <rect key="frame" x="0.0" y="0.0" width="199.33333333333334" height="30.333333333333332"/>
@@ -94,13 +95,13 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Register" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qVG-VC-3Un">
-                                <rect key="frame" x="20" y="123.99999999999999" width="350" height="31.333333333333329"/>
+                                <rect key="frame" x="20" y="126.99999999999999" width="350" height="31.333333333333329"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g9e-jv-611">
-                                <rect key="frame" x="20" y="515.33333333333337" width="350" height="50"/>
+                                <rect key="frame" x="20" y="518.33333333333337" width="350" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="07D-sn-AU6"/>
                                 </constraints>
@@ -129,6 +130,12 @@
                             <constraint firstItem="VMH-wa-e7t" firstAttribute="top" secondItem="qVG-VC-3Un" secondAttribute="bottom" constant="60" id="yYi-GW-qNZ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="confirmField" destination="uBk-ir-D8g" id="IIB-UW-vF6"/>
+                        <outlet property="emailField" destination="Jsx-G6-PJW" id="Map-i2-yTy"/>
+                        <outlet property="passwordField" destination="uBk-ir-D8g" id="6nN-Ft-NIx"/>
+                        <outlet property="usernameField" destination="Jsx-G6-PJW" id="SZb-bF-5XH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -137,7 +144,7 @@
     </scenes>
     <resources>
         <systemColor name="placeholderTextColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemFillColor">
             <color red="0.47058823529411764" green="0.47058823529411764" blue="0.50196078431372548" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>

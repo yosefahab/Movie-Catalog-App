@@ -6,31 +6,27 @@
 //
 
 import Foundation
+
+
+var actors: [Actor] = []
+//let actors : [Actor] = [
+//    Actor(id: "125", name: "will smith", image: "pic", moviesList: []),
+//    Actor(id: "125", name: "will smith", image: "pic", moviesList: []),
+//    Actor(id: "125", name: "will smith", image: "pic", moviesList: []),
+//    Actor(id: "125", name: "will smith", image: "pic", moviesList: [])
+//]
+
 struct Actor: Codable {
-    let id , name , image : String
-    let moviesList : [Movie]
+    let actorID: Int
+    let actorName: String
+    let actorImageURL: String
+    let age, height: String
+    let actorMovies: [Movie]
+
+    enum CodingKeys: String, CodingKey {
+        case actorID = "actorId"
+        case actorName
+        case actorImageURL = "actorImageUrl"
+        case age, height, actorMovies
+    }
 }
-
-
-let actors : [Actor] = [
-    Actor(id: "125", name: "will smith", image: "pic", moviesList: [
-        Movie(name: "movie1", rating: "5.0", time: "2:30:00", category: "Action", year: "2020", director: "me", isFavourite: true),
-        Movie(name: "movie5", rating: "1.0", time: "2:30:00", category: "Drama", year: "2020", director: "me", isFavourite: true)
-    ]),
-    Actor(id: "125", name: "will smith", image: "pic", moviesList: [
-        Movie(name: "movie1", rating: "5.0", time: "2:30:00", category: "Action", year: "2020", director: "me", isFavourite: true),
-        Movie(name: "movie5", rating: "1.0", time: "2:30:00", category: "Drama", year: "2020", director: "me", isFavourite: true)
-    ]),
-    Actor(id: "125", name: "will smith", image: "pic", moviesList: [
-        Movie(name: "movie1", rating: "5.0", time: "2:30:00", category: "Action", year: "2020", director: "me", isFavourite: true),
-        Movie(name: "movie5", rating: "1.0", time: "2:30:00", category: "Drama", year: "2020", director: "me", isFavourite: true)
-    ]),
-    Actor(id: "125", name: "will smith", image: "pic", moviesList: [
-        Movie(name: "movie1", rating: "5.0", time: "2:30:00", category: "Action", year: "2020", director: "me", isFavourite: true),
-        Movie(name: "movie2", rating: "4.0", time: "2:30:00", category: "Drama", year: "2020", director: "me", isFavourite: true),
-    ]),
-    Actor(id: "125", name: "will smith", image: "pic", moviesList: [
-        Movie(name: "movie1", rating: "5.0", time: "2:30:00", category: "Action", year: "2020", director: "me", isFavourite: true),
-        Movie(name: "movie2", rating: "4.0", time: "2:30:00", category: "Drama", year: "2020", director: "me", isFavourite: true),
-    ])
-]

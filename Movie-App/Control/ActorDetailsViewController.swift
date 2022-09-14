@@ -9,11 +9,11 @@ import UIKit
 
 class ActorDetailsViewController : UIViewController, UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (self.actor?.moviesList.count)!
+        return (self.actor?.actorMovies.count)!
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let movie: Movie = (self.actor?.moviesList[indexPath.row])!
+        let movie: Movie = (self.actor?.actorMovies[indexPath.row])!
         let cell = tableView.dequeueReusableCell(withIdentifier: "ActorMoviesCell", for: indexPath) as! ActorMoviesCell
         cell.configureCell(info: movie)
         return cell
@@ -40,8 +40,8 @@ class ActorDetailsViewController : UIViewController, UITableViewDataSource, UITa
         super.viewDidLoad()
         
         if let actor = actor {
-            self.actorName.text = actor.name
-            self.actorImage.image = UIImage(named: actor.image)
+            self.actorName.text = actor.actorName
+            self.actorImage.image = UIImage(named: actor.actorImageURL)
         }
     }
 }

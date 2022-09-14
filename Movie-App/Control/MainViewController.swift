@@ -8,10 +8,12 @@
 import UIKit
 
 class MainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return movies.count
     }
     
+    @IBOutlet weak var welcomeLabel: UILabel!
     // fill cell
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         // filter by movies with rating >= 4.0
@@ -35,7 +37,6 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         if collectionView === topMoviesCollection {
             let cell = topMoviesCollection.cellForItem(at: indexPath) as! CustomCollectionViewCell
             cell.configureCell(id: indexPath.row)
-            
             let targetStoryboard = UIStoryboard(name: "MovieDetails", bundle: nil)
             if let targetViewController = targetStoryboard.instantiateViewController(withIdentifier: "movieDetails") as? MovieDetailsViewController {
                 targetViewController.movie = movies[cell.id!]
@@ -45,7 +46,6 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         else {
             let cell = moviesCollection.cellForItem(at: indexPath) as! CustomMoviesCollectionViewCell
             cell.configureCell(id: indexPath.row)
-            
             let targetStoryboard = UIStoryboard(name: "MovieDetails", bundle: nil)
             if let targetViewController = targetStoryboard.instantiateViewController(withIdentifier: "movieDetails") as? MovieDetailsViewController {
                 targetViewController.movie = movies[cell.id!]
@@ -58,9 +58,8 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBOutlet weak var moviesCollection: UICollectionView!
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        _ = Task { try await NetworkClient.requestMovies() }
         
+        super.viewDidLoad()
         let checked: Bool = false
         if checked == false {
             let targetStoryboardName = "Login"
@@ -70,26 +69,32 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 self.present(targetViewController, animated: true, completion: nil)
             }
         }
+        NotificationCenter.default.addObserver(self, selector: #selector(movieUpdated), name: Notification.Name("moviesUpdated"), object: nil)
+        
+        self.welcomeLabel.text = "Welcome home, " + (currentUser?.username ?? "")
+    }
+    @objc private func movieUpdated(notification: NSNotification) {
+        self.topMoviesCollection.reloadData()
+        self.moviesCollection.reloadData()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: false)
-        
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: false)
-        
     }
     
+    // navigate to favourite screen
     @IBAction func favouritesBtnPressed(_ sender: Any) {
         let targetStoryboard = UIStoryboard(name: "FavouriteMoviesList", bundle: nil)
         if let targetViewController = targetStoryboard.instantiateViewController(withIdentifier: "FavouriteMoviesList") as? FavouriteMoviesListController {
             self.navigationController?.pushViewController(targetViewController, animated: true)
         }
-        
     }
+    // navigate to actors screen
     @IBAction func actorsBtnPressed(_ sender: Any) {
         let targetStoryboard = UIStoryboard(name: "ActorsList", bundle: nil)
         if let targetViewController = targetStoryboard.instantiateViewController(withIdentifier: "ActorsList") as? ActorsListViewController {
@@ -100,7 +105,6 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             transition.type = .push
             transition.subtype = .fromLeft
             self.navigationController?.view.layer.add(transition, forKey: kCATransition)
-            
             self.navigationController?.pushViewController(targetViewController, animated: true)
         }
     }

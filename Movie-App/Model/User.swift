@@ -12,4 +12,7 @@ struct User: Codable{
     var email: String?
     var username: String?
     var password: String?
+    var userFavourite: [Movie]?
 }
+
+var currentUser: User?

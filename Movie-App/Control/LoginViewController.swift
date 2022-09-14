@@ -8,15 +8,36 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-    
-    var dismissCallBack: (()->Void)?
 
+    @IBOutlet weak var emailField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
+    
+    func isValidCreds(email: String, password: String) -> Bool {
+        let reg = "^(?!\\s*$).+"
+        let pred = NSPredicate(format:"SELF MATCHES %@", reg)
+        return pred.evaluate(with: email) && pred.evaluate(with: password)
+    }
+    
     @IBAction func signInPressed(_ sender: Any) {
-        _ = Task { try await NetworkClient.requestLogin(email: "steven123@yahoo.com", password: "steven123") }
+        let email: String = emailField.text!
+        let password: String = passwordField.text!
+        
+        if isValidCreds(email: email, password: password) {
+            Task {
+                currentUser = await NetworkClient.requestLogin(email: email, password: password)
+                if (currentUser != nil) {
+                    movies = await NetworkClient.requestMovies()
+                    actors = await NetworkClient.requestActors()
+                    self.dismiss(animated: true)
+                }
+            }
+        }
+        else {
+        }
     }
     
     @IBAction func signUpPressed(_ sender: Any) {
