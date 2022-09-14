@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ghx-G7-ESc">
-                                <rect key="frame" x="0.0" y="64" width="414" height="200"/>
+                                <rect key="frame" x="0.0" y="68" width="414" height="200"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -25,7 +26,7 @@
                                 </wkWebViewConfiguration>
                             </wkWebView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="KGX-zU-CjS" userLabel="DurationDirectorStack">
-                                <rect key="frame" x="20" y="461" width="90" height="48"/>
+                                <rect key="frame" x="20" y="465" width="90" height="48"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="4D3-ld-F2w" userLabel="DurationStack">
                                         <rect key="frame" x="0.0" y="0.0" width="90" height="21.5"/>
@@ -64,7 +65,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="DpB-VO-Fzk" userLabel="CategoryRateStack">
-                                <rect key="frame" x="166.5" y="377" width="81" height="54.5"/>
+                                <rect key="frame" x="166.5" y="381" width="81" height="54.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Category" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2cs-Vd-EDn">
                                         <rect key="frame" x="0.0" y="0.0" width="81" height="24"/>
@@ -90,13 +91,13 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DQG-CW-HSQ">
-                                <rect key="frame" x="20" y="529" width="374" height="31.5"/>
+                                <rect key="frame" x="20" y="533" width="374" height="31.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Zwo-fN-cnR" userLabel="YearStack">
-                                <rect key="frame" x="173.5" y="289" width="67" height="63"/>
+                                <rect key="frame" x="173.5" y="293" width="67" height="63"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8tW-FR-uHQ">
                                         <rect key="frame" x="3" y="0.0" width="61.5" height="31.5"/>
@@ -113,7 +114,7 @@
                                 </subviews>
                             </stackView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aQ9-LP-3Wu">
-                                <rect key="frame" x="20" y="570.5" width="374" height="291.5"/>
+                                <rect key="frame" x="20" y="574.5" width="374" height="287.5"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -144,10 +145,12 @@
                     </view>
                     <connections>
                         <outlet property="movieCategory" destination="2cs-Vd-EDn" id="n9C-6h-pJK"/>
+                        <outlet property="movieDescription" destination="aQ9-LP-3Wu" id="hvr-tn-vgM"/>
                         <outlet property="movieDirector" destination="s6V-1l-pil" id="tEa-lT-wmO"/>
                         <outlet property="movieDuration" destination="ebA-rK-8Jn" id="OZy-Ly-Wc9"/>
                         <outlet property="movieName" destination="8tW-FR-uHQ" id="yZo-PY-5HB"/>
                         <outlet property="movieRating" destination="aH2-L3-vaa" id="qPK-ya-7U0"/>
+                        <outlet property="movieTrailer" destination="Ghx-G7-ESc" id="1wX-Ga-mva"/>
                         <outlet property="movieYear" destination="5bY-T6-MU2" id="T7i-Ec-glk"/>
                     </connections>
                 </viewController>

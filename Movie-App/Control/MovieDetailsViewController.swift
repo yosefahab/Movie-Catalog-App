@@ -12,12 +12,14 @@ class MovieDetailsViewController: UIViewController {
     
     var movie: Movie?
     
+    @IBOutlet weak var movieTrailer: WKWebView!
     @IBOutlet weak var movieName: UILabel!
     @IBOutlet weak var movieDirector: UILabel!
     @IBOutlet weak var movieCategory: UILabel!
     @IBOutlet weak var movieYear: UILabel!
     @IBOutlet weak var movieDuration: UILabel!
     @IBOutlet weak var movieRating: UILabel!
+    @IBOutlet weak var movieDescription: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +31,9 @@ class MovieDetailsViewController: UIViewController {
             movieYear.text = "(" + movie.movieProductionYear! + ")"
             movieDuration.text = movie.movieDuration
             movieRating.text = movie.movieRating
+            movieDescription.text = movie.movieDescription
+            
+            movieTrailer.load(URLRequest(url: URL(string: movie.movieVideoURL!)!))
         }
     }
 }

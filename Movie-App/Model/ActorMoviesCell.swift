@@ -10,6 +10,18 @@ import Foundation
 import UIKit
 
 class ActorMoviesCell: UITableViewCell {
+    func loadIm(url: URL) -> Void{
+        DispatchQueue.global().async { [weak self] in
+            if let data = try? Data(contentsOf: url) {
+                if let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        self!.img.image = image
+                    }
+                }
+            }
+        }
+    }
+    
     
     var movie: Movie?
 
@@ -52,6 +64,7 @@ class ActorMoviesCell: UITableViewCell {
 //            self.favourite.setImage(UIImage(systemName: "heart"), for: .normal)
 //        }
 //
+        loadIm(url: URL(string: (self.movie?.movieImageURL!)!)!)
         self.cellView.layer.cornerRadius = 12
         self.img.layer.cornerRadius = 12
     }

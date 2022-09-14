@@ -11,18 +11,13 @@ import UIKit
 class FavouriteMoviesListController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return movies.count
+        return (currentUser?.userFavourite?.count)!
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let movie: Movie = movies[indexPath.row]
+        let movie: Movie = (currentUser?.userFavourite![indexPath.row])!
         let cell = moviesTable.dequeueReusableCell(withIdentifier: "CustomTableCell", for: indexPath) as! CustomTableCell
         cell.configureCell(info: movie)
-        // TODO: figure out code flow
-        
-//        cell.saveToFav = {
-//            cell.favourite.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-//        }
         return cell
     }
     // navigate to detail view of this movie

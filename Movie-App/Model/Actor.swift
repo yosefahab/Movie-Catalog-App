@@ -13,13 +13,6 @@ var actors: [Actor] = [] {
         NotificationCenter.default.post(name: Notification.Name("actorsUpdated"), object: nil)
     }
 }
-//let actors : [Actor] = [
-//    Actor(id: "125", name: "will smith", image: "pic", moviesList: []),
-//    Actor(id: "125", name: "will smith", image: "pic", moviesList: []),
-//    Actor(id: "125", name: "will smith", image: "pic", moviesList: []),
-//    Actor(id: "125", name: "will smith", image: "pic", moviesList: [])
-//]
-
 struct Actor: Codable {
     let actorID: Int
     let actorName: String

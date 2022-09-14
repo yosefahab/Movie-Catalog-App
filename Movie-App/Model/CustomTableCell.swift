@@ -33,7 +33,17 @@ class CustomTableCell: UITableViewCell {
 //            }
 //        }
     }
-    
+    func loadIm(url: URL) -> Void{
+        DispatchQueue.global().async { [weak self] in
+            if let data = try? Data(contentsOf: url) {
+                if let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        self!.img.image = image
+                    }
+                }
+            }
+        }
+    }
     func configureCell(info: Movie){
         // cell data
         self.movie = info
@@ -51,7 +61,7 @@ class CustomTableCell: UITableViewCell {
 //        else {
 //            self.favourite.setImage(UIImage(systemName: "heart"), for: .normal)
 //        }
-
+        loadIm(url: URL(string: info.movieImageURL!)!)
         self.cellView.layer.cornerRadius = 12
         self.img.layer.cornerRadius = 12
     }
