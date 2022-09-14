@@ -12,31 +12,21 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return movies.count
     }
-    
-    func findFirstTop(after idx: Int) -> Int {
-        for i in idx...movies.count {
-            if Double(movies[i].movieRating!)! >= 4.0 {
-                return i
-            }
-        }
-        return 0
-    }
+
     // fill cell
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         // filter by movies with rating >= 4.0
         if collectionView === topMoviesCollection {
             let cell = topMoviesCollection.dequeueReusableCell(withReuseIdentifier: "topMoviesCollectionCell", for: indexPath) as! CustomCollectionViewCell
-            let idx = findFirstTop(after: indexPath.row)
-            // TODO: dynamic images
-            cell.img.image = UIImage(named: "pic")
-            cell.configureCell(id: idx)
-
+            cell.configureCell(id: indexPath.row)
             return cell
         }
+        
         // filter by movies with rating < 4.0
         else {
             let cell = moviesCollection.dequeueReusableCell(withReuseIdentifier: "moviesCollectionCell", for: indexPath) as! CustomMoviesCollectionViewCell
-            cell.img.image = UIImage(named: "pic")
+            
+            cell.configureCell(id: indexPath.row)
             return cell
         }
     }
@@ -48,7 +38,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             cell.configureCell(id: indexPath.row)
             let targetStoryboard = UIStoryboard(name: "MovieDetails", bundle: nil)
             if let targetViewController = targetStoryboard.instantiateViewController(withIdentifier: "movieDetails") as? MovieDetailsViewController {
-                targetViewController.movie = movies[0]
+                targetViewController.movie = cell.movie
                 self.navigationController?.pushViewController(targetViewController, animated: true)
             }
         }
@@ -57,11 +47,12 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             cell.configureCell(id: indexPath.row)
             let targetStoryboard = UIStoryboard(name: "MovieDetails", bundle: nil)
             if let targetViewController = targetStoryboard.instantiateViewController(withIdentifier: "movieDetails") as? MovieDetailsViewController {
-                targetViewController.movie = movies[0]
+                targetViewController.movie = cell.movie
                 self.navigationController?.pushViewController(targetViewController, animated: true)
             }
         }
     }
+    
     @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var topMoviesCollection: UICollectionView!
     @IBOutlet weak var moviesCollection: UICollectionView!
@@ -78,12 +69,16 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 self.present(targetViewController, animated: true, completion: nil)
             }
         }
+        NotificationCenter.default.addObserver(self, selector: #selector(topMoviesUpdated), name: Notification.Name("topMoviesUpdated"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(moviesUpdated), name: Notification.Name("moviesUpdated"), object: nil)
     }
+
     @objc private func moviesUpdated(notification: NSNotification) {
-        self.topMoviesCollection.reloadData()
         self.moviesCollection.reloadData()
         self.welcomeLabel.text = "Welcome home, " + (currentUser?.username ?? "")
+    }
+    @objc private func topMoviesUpdated(notification: NSNotification) {
+        self.topMoviesCollection.reloadData()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -91,6 +86,16 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         
         if (movies.isEmpty) { Task { movies = await NetworkClient.requestMovies() } }
+        else {
+            for movie in movies {
+                if Double(movie.movieRating!)! >= 4.5 {
+                    topMovies.append(movie)
+                }
+                else {
+                    movies.append(movie)
+                }
+            }
+        }
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)

@@ -35,7 +35,7 @@ class RegisterViewController : UIViewController{
         
         if isValidCreds(username: username, email: email, password: password, confirm: confirm) {
             Task {
-                currentUser = await NetworkClient.requestRegister(username:"tester", email:"tester@yahoo.com", password: "tester")
+                currentUser = await NetworkClient.requestRegister(username:username, email:email, password: password)
                 if currentUser != nil { self.dismiss(animated: true) }
             }
         }

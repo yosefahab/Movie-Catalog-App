@@ -133,8 +133,8 @@
                     <connections>
                         <outlet property="confirmField" destination="uBk-ir-D8g" id="IIB-UW-vF6"/>
                         <outlet property="emailField" destination="Jsx-G6-PJW" id="Map-i2-yTy"/>
-                        <outlet property="passwordField" destination="uBk-ir-D8g" id="6nN-Ft-NIx"/>
-                        <outlet property="usernameField" destination="Jsx-G6-PJW" id="SZb-bF-5XH"/>
+                        <outlet property="passwordField" destination="gJR-ON-uSr" id="pga-Sx-39K"/>
+                        <outlet property="usernameField" destination="AUt-5R-TSF" id="hdQ-Zi-7Lk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -92,7 +92,7 @@ class NetworkClient {
         
         do {
             let (_, response) = try await URLSession.shared.data(from: url)
-            if let httpResponse = response as? HTTPURLResponse {
+            if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 {
                 print("register request w/ status code: \(httpResponse.statusCode)")
                 return User(id: nil, email: email, username: username, password: password, userFavourite: [])
             }
@@ -103,15 +103,5 @@ class NetworkClient {
             print("error in register request/deocde user")
         }
         return nil
-    }
-
-    static func downloadImage(from url: URL) {
-       
-//        getData(from: url) { data, response, error in
-//            guard let data = data, error == nil else { return }
-//            print(response?.suggestedFilename ?? url.lastPathComponent)
-//            DispatchQueue.main.async() { [weak self] in
-//            }
-//        }
     }
 }

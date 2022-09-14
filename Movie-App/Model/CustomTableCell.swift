@@ -53,7 +53,6 @@ class CustomTableCell: UITableViewCell {
 //        }
 
         self.cellView.layer.cornerRadius = 12
-        self.img.image = UIImage(named: "pic")
         self.img.layer.cornerRadius = 12
     }
     

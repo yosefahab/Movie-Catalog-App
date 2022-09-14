@@ -8,6 +8,18 @@
 import UIKit
 
 class ActorDetailsViewController : UIViewController, UITableViewDataSource, UITableViewDelegate {
+    func loadIm(url: URL) -> Void{
+        DispatchQueue.global().async { [weak self] in
+            if let data = try? Data(contentsOf: url) {
+                if let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        self!.actorImage.image = image
+                    }
+                }
+            }
+        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (self.actor?.actorMovies.count)!
     }
@@ -41,7 +53,7 @@ class ActorDetailsViewController : UIViewController, UITableViewDataSource, UITa
         
         if let actor = actor {
             self.actorName.text = actor.actorName
-            self.actorImage.image = UIImage(named: actor.actorImageURL)
+            loadIm(url: URL(string: self.actor!.actorImageURL)!)
         }
     }
 }
