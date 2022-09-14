@@ -11,6 +11,11 @@ class ActorsListViewController:UIViewController,UITableViewDelegate,UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(actorsUpdated), name: Notification.Name("actorsUpdated"), object: nil)
+    }
+    @objc private func actorsUpdated(notification: NSNotification) {
+        self.actorsTable.reloadData()
     }
     
     @IBOutlet weak var actorsTable: UITableView!
@@ -34,6 +39,12 @@ class ActorsListViewController:UIViewController,UITableViewDelegate,UITableViewD
         transition.subtype = .fromRight
         self.navigationController?.view.layer.add(transition, forKey: kCATransition)
         
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if (actors.isEmpty) { Task { actors = await NetworkClient.requestActors() } }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let actor = actors[indexPath.row]

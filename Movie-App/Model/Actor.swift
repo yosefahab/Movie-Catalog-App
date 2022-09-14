@@ -8,7 +8,11 @@
 import Foundation
 
 
-var actors: [Actor] = []
+var actors: [Actor] = [] {
+    didSet {
+        NotificationCenter.default.post(name: Notification.Name("actorsUpdated"), object: nil)
+    }
+}
 //let actors : [Actor] = [
 //    Actor(id: "125", name: "will smith", image: "pic", moviesList: []),
 //    Actor(id: "125", name: "will smith", image: "pic", moviesList: []),

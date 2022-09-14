@@ -30,8 +30,6 @@ class LoginViewController: UIViewController {
             Task {
                 currentUser = await NetworkClient.requestLogin(email: email, password: password)
                 if (currentUser != nil) {
-                    movies = await NetworkClient.requestMovies()
-                    actors = await NetworkClient.requestActors()
                     self.dismiss(animated: true)
                 }
             }

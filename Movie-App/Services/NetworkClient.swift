@@ -105,7 +105,8 @@ class NetworkClient {
         return nil
     }
 
-    func downloadImage(from url: URL) {
+    static func downloadImage(from url: URL) {
+       
 //        getData(from: url) { data, response, error in
 //            guard let data = data, error == nil else { return }
 //            print(response?.suggestedFilename ?? url.lastPathComponent)
