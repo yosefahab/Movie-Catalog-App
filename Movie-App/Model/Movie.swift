@@ -40,6 +40,8 @@ struct Movie: Codable {
     var movieRating, movieDescription: String?
     var movieVideoURL: String?
 
+    var isFavourite: Bool = false
+    
     enum CodingKeys: String, CodingKey {
         case movieID = "movieId"
         case movieName, directorName, movieDuration, movieProductionYear, movieCategory

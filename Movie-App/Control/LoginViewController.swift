@@ -29,6 +29,7 @@ class LoginViewController: UIViewController {
         if isValidCreds(email: email, password: password) {
             Task {
                 currentUser = await NetworkClient.requestLogin(email: email, password: password)
+                currentUser?.userFavourite = []
                 if (currentUser != nil) {
                     self.dismiss(animated: true)
                 }

@@ -21,17 +21,18 @@ class CustomTableCell: UITableViewCell {
     @IBOutlet weak var cellView: UIView!
     @IBOutlet weak var director: UILabel!
     
-    @IBAction func saveActionButton(_ sender: Any) {
-//        if let movie = self.movie {
-//            if movie.isFavourite == true {
-//                self.favourite.setImage(UIImage(systemName: "heart"), for: .normal)
-//                self.movie?.isFavourite = false
-//            }
-//            else{
-//                self.favourite.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-//                self.movie?.isFavourite = true
-//            }
-//        }
+    @IBAction func favouriteBtnPressed(_ sender: Any) {
+        if let movie = self.movie {
+            if movie.isFavourite == true {
+                self.favourite.setImage(UIImage(systemName: "heart"), for: .normal)
+                self.movie?.isFavourite = false
+            }
+            else{
+                self.favourite.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+                self.movie?.isFavourite = true
+                currentUser?.userFavourite?.append(movie)
+            }
+        }
     }
     func loadIm(url: URL) -> Void{
         DispatchQueue.global().async { [weak self] in
@@ -54,13 +55,14 @@ class CustomTableCell: UITableViewCell {
         self.year.text = info.movieProductionYear
         self.director.text = info.directorName
         
-        // cell view properties
-//        if info.isFavourite == true {
-//            self.favourite.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-//        }
-//        else {
-//            self.favourite.setImage(UIImage(systemName: "heart"), for: .normal)
-//        }
+//         cell view properties
+        if info.isFavourite == true {
+            self.favourite.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+        }
+        else {
+            self.favourite.setImage(UIImage(systemName: "heart"), for: .normal)
+        }
+        
         loadIm(url: URL(string: info.movieImageURL!)!)
         self.cellView.layer.cornerRadius = 12
         self.img.layer.cornerRadius = 12
