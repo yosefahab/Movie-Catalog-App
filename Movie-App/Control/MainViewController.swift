@@ -78,7 +78,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
 
     @objc private func moviesUpdated(notification: NSNotification) {
-        self.welcomeLabel.text = "Welcome home, " + (currentUser?.username ?? "")
+        self.welcomeLabel.text = "Welcome home, " + (currentUser?.username ?? "Steven")
         
         for movie in movies {
             if Double(movie.movieRating!)! >= 6.0 {

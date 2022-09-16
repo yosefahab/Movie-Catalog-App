@@ -35,7 +35,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="220" height="380"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lfB-Is-kHf">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lfB-Is-kHf">
                                                     <rect key="frame" x="5" y="0.0" width="210" height="380"/>
                                                 </imageView>
                                             </subviews>
